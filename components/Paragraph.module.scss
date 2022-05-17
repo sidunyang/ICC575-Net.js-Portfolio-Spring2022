@@ -1,0 +1,9 @@
+.paragraph{
+    font-size: 1rem;
+    font-family: Arial;
+    &.intro{
+        font-size: 2rem;
+        color:lightgreen;
+        font-family: Georgia,
+    }
+}

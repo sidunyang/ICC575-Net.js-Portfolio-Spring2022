@@ -1,0 +1,20 @@
+@use '../sass/abstracts/mixins';
+
+$device :xs, sm, md,lg;
+
+.col{
+    // background-color: aqua;
+    width: 100%;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    @each $device in $device{
+        @include mixins.breakpoint($device){
+             @for $i from 1 through 12 {
+                &.col-#{$device}-#{$i} {
+                    width: calc(100% * ($i/12));
+            }
+           }
+        }// mixin breakpoint
+    }//device for loop
+    @include mixins.textAligns(); 
+}//col parentr
