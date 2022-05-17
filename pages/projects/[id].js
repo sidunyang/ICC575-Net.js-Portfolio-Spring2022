@@ -29,7 +29,7 @@ export async function getStaticProps({ params }){
 //3.Use the data inside your SingleProjectPage component
 const SingleProjectPage = ({ projectData }) => {
      // console.log({projectData});
-     const {title, image, content} = projectData;
+     const {title, image, content} = projectData.matchingProject;
     return <Layout>
         <Container>
             {/*featuredImage &&
