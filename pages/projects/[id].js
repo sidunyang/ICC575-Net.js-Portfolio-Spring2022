@@ -29,17 +29,23 @@ export async function getStaticProps({ params }){
 //3.Use the data inside your SingleProjectPage component
 const SingleProjectPage = ({ projectData }) => {
      // console.log({projectData});
-     const {title, featuredImage, content} = projectData;
+     const {title, image, content} = projectData;
     return <Layout>
         <Container>
-            {featuredImage &&
+            {/*featuredImage &&
             <Image
             src={featuredImage.node.sourceUrl}
             alt={featuredImage.node.altText}
             width={featuredImage.node.mediaDetails.width}
             height={featuredImage.node.mediaDetails.height}
             />
-            }
+*/} 
+ <Image
+            src={`/images/${image}`}
+            alt={title}
+            width={1500}
+            height={1000}
+            />
             
        <Heading level="1">{title}</Heading>
        <div dangerouslySetInnerHTML={{__html:content}} />
